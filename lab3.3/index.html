@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кількість заданих слів у тексті</title>
+</head>
+<body>
+    <body bgcolor="#ccff99">
+        <h4>Кількість заданих слів у тексті</h4>
+        <form name="form1">
+            Введіть текст:<br>
+            <textarea name="textin" rows="4" cols="20"></textarea><hr>
+            Введіть слово: <input type="text" name="data" size="8"><hr>
+            <input type="button" value="Визначити" onClick="numword(form1)"><hr>
+            Кількість слів у тексті: <input type="text" name="result" size="8"><hr>
+            <input type="reset" value="Скасувати">
+        </form>
+    </body>
+    <script language="JavaScript">
+        function numword(obj) {
+            var text = obj.textin.value;
+            var word = obj.data.value;
+            
+            if (!text || !word) {
+                alert("Будь ласка, введіть текст і слово.");
+                return;
+            }
+
+            var wordsArray = text.split(" ");
+            var count = 0;
+
+            for (var i = 0; i < wordsArray.length; i++) {
+                if (wordsArray[i] === word) {
+                    count++;
+                }
+            }
+
+            obj.result.value = count;
+        }
+    </script>
+</body>
+</html>

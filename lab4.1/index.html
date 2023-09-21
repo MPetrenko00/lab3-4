@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Визначення часу</title>
+</head>
+<body>
+    <script language="JavaScript">
+
+        function c1() {
+            var d = document;
+            var t = new Date();
+            var h = t.getHours();
+            var m = t.getMinutes();
+            var s = t.getSeconds();
+            var res = "";
+
+            if (h < 10)
+                res += "0" + h;
+            else
+                res += h;
+
+            if (m < 10)
+                res += ":0" + m;
+            else
+                res += ":" + m;
+
+            if (s < 10)
+                res += ":0" + s;
+            else
+                res += ":" + s;
+
+            d.form1.rest.value = res;
+        }
+
+    </script>
+
+        <img src="../image/kyiv.gif" alt="kyiv" width="300px" height="300px"><br>
+        При натисканні кнопки Час , Ви дізнаєтеся, котра година
+        <FORM name="form1">
+          <input type="button" value="Час" onClick="c1()">
+          <input type="text" size="10" name="rest"><br>
+        </FORM>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вивід символів рядка у "стовпчик"</title>
+</head>
+<body bgcolor="#FFFFCC">
+    <h4>Символи поточного рядка у стовпчик</h4>
+    <form name="form1">
+        Введіть рядок: <input type="text" size="20" name="st1"><hr>
+        <input type="button" value="Виконати" onClick="form1.res.value=ttest(form1.st1.value)">
+        <input type="reset" value="Очистити"><hr>
+        <textarea cols="20" rows="7" name="res"></textarea>
+    </form>
+    <script language="JavaScript">
+        function ttest(s) {
+            var sres = "Прочитаний текст:" + " \r\n" + s + "\r\n" +
+                "Текст у \"стовпчик\":\r\n";
+            var cur = "";
+
+            for (var i = 0; i < s.length; i++) {
+                c = s.charAt(i);
+                cur += c + "\r\n";
+            }
+
+            sres += cur;
+            return sres;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>П'ятниця «13»</title>
+</head>
+<body>
+
+    <h4>В які місяці року 13 число припадає на п'ятницю?</h4>
+    <form name="form1">
+        Введіть рік: <input type="text" size="8" name="fye">
+        <input type="button" value="Знайти" onClick="def13(form1)"><br>
+        <textarea cols="30" rows="4" name="res"></textarea><br>
+        <input type="reset" value="Скасувати">
+    </form>
+
+    <script language="JavaScript">
+        function def13(obj) {
+            var year = Number(obj.fye.value);
+            var result = "";
+
+            for (var month = 0; month < 12; month++) {
+                var date = new Date(year, month, 13);
+                if (date.getDay() === 5) {  // 5 - номер п'ятниці
+                    result += fmon(month) + "\r\n";
+                }
+            }
+
+            obj.res.value = result;
+        }
+
+        function fmon(month) {
+            var monthsArray = [
+                "січень", "лютий", "березень", "квітень", "травень", "червень",
+                "липень", "серпень", "вересень", "жовтень", "листопад", "грудень"
+            ];
+            return monthsArray[month];
+        }
+    </script>
+</body>
+</html>
